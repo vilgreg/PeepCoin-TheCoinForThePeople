@@ -13,7 +13,11 @@ UNIX BUILD NOTES
 To Build
 --------
 
-cd src/
+cd ~/PeepCoin-TheCoinForThePeople/src/leveldb/
+chmod +x build_detect_platform
+make clean
+make libleveldb.a libmemenv.a
+cd ..
 make -f makefile.unix            # Headless peepcoin
 
 See readme-qt.rst for instructions on building Peepcoin QT,

@@ -8,17 +8,31 @@ software written by Thomas Bernard.
 
 
 UNIX BUILD NOTES
+
 ================
+Dependencies
+------------
+sudo add-apt-repository ppa:bitcoin/bitcoin
+sudo apt-get update
+
+sudo apt-get install build-essential
+sudo apt-get install libssl-dev
+sudo apt-get install libdb4.8++-dev
+sudo apt-get install libboost-all-dev
+sudo apt-get install libqrencode-dev
+sudo apt-get install libminiupnpc-dev
 
 To Build
 --------
-
+LevelDB
 cd ~/PeepCoin-TheCoinForThePeople/src/leveldb/
 chmod +x build_detect_platform
 make clean
 make libleveldb.a libmemenv.a
 cd ..
-make -f makefile.unix            # Headless peepcoin
+
+Headless peepcoin
+make -f makefile.unix            
 
 See readme-qt.rst for instructions on building Peepcoin QT,
 the graphical peepcoin.
@@ -62,9 +76,10 @@ Versions used in this release:
  Berkeley DB   5.3.28.NC
  Boost         1.55.0
  miniupnpc     1.9.20140401
+ 
 
-Dependency Build Instructions: Ubuntu & Debian
-----------------------------------------------
+Detailed Dependency Build Instructions: Ubuntu & Debian
+-------------------------------------------------------
 sudo apt-get install build-essential
 sudo apt-get install libssl-dev
 sudo apt-get install libdb++-dev
